@@ -15,8 +15,6 @@ developers := List(Developer("cynance",
 licenses += ("Apache-2.0", url("http://www.apache.org/licenses/LICENSE-2.0"))
 publishMavenStyle := true
 
-enablePlugins(MicrositesPlugin)
-
 // Add sonatype repository settings
 publishTo := sonatypePublishTo.value
 
@@ -68,28 +66,3 @@ sourceGenerators in Test += Def.task {
 coverageExcludedPackages := ".*ConfigService.*;.*Config.*;alpaca\\.client\\..*"
 
 coverageEnabled := true
-
-
-//Microsite details
-micrositeName := "Alpaca Scala"
-micrositeDescription := "A Scala library for alpaca.markets"
-micrositeAuthor := "Cynance"
-micrositeBaseUrl := "/alpaca-scala"
-micrositeDocumentationUrl := "/alpaca-scala/docs"
-
-micrositePalette := Map(
-  "brand-primary"     -> "#000",
-  "brand-secondary"   -> "#000",
-  "brand-tertiary"    -> "#fcd600",
-  "gray-dark"         -> "#453E46",
-  "gray"              -> "#837F84",
-  "gray-light"        -> "#E3E2E3",
-  "gray-lighter"      -> "#F4F3F4",
-  "white-color"       -> "#FFFFFF")
-
-micrositePushSiteWith := GitHub4s
-
-micrositeGithubToken := sys.env.get("GITHUB_TOKEN")
-
-micrositeGithubOwner := "cynance"
-micrositeGithubRepo := "alpaca-scala"
